@@ -1,0 +1,23 @@
+//Given a positive integer num, write a function which returns True if num is a perfect square else False.
+//   Follow up: Do not use any built-in library function such as sqrt.
+public class Valid_Sqrt {
+    public static void main(String[] args) {
+     int num = 25;
+        System.out.println(sqrt(num));
+    }
+    static Boolean sqrt(long num) {
+        long start = 1;
+        long end = num;
+        while (start <= end) {
+            long mid = start + (end - start) / 2;
+            if (mid * mid == num) {
+                return true;
+            } else if (mid * mid < num) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return false;
+    }
+}

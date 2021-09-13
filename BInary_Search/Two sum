@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+public class Two_sum {
+    public static void main(String[] args) {
+        int[] num = {4, 5, 7, 11};
+        int target = 16;
+        int arr [] = new int[2];
+        int start =0;
+        int end = num.length-1;
+        while(start < end) {
+            if (num[start] + num[end] == target) {
+                break;
+            }
+            else if (num[start] + num[end] < target) {
+               start++;
+            }
+            else {
+                end--;
+            }
+        }
+            arr[0] = start;
+            arr[1] = end;
+        System.out.println(Arrays.toString(arr));
+        }
+    }
